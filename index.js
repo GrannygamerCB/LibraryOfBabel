@@ -161,15 +161,13 @@ function _searchSingle (text) {
 		});
 }
 
-
-// Testing
-
-//getPageText('a', 3, 2, 29, 3).catch(err => console.log('Err:', err));
-
-search('taco bell.')
-	.then(data => {
-		console.log(data[0])
-		return getPageText(data[0].hex, Number(data[0].wall), Number(data[0].shelf), Number(data[0].volume), Number(data[0].page));
-	})
-	.then(text => console.log(text))
-	.catch(err => console.log('Search Err:', err));
+module.exports = {
+	grabPageTextFromHTML,
+	cleanUpPageText,
+	generateFormData,
+	getPageData,
+	getPageText,
+	search,
+	generateFormData,
+	_searchSingle
+};
